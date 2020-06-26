@@ -308,7 +308,7 @@ def parse_reminder(now: dt.datetime, text: str) -> Tuple[dt.datetime, str]:
     else:
         raise ParseError
 
-    return when, text
+    return when, text.strip()
 
 
 if __name__ == '__main__':
