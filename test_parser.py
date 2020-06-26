@@ -34,7 +34,5 @@ from bot import parse_reminder
 def test_parser(text, expected):
     now = dt.datetime(2020, 5, 26, 12, 30)
     for text_fmt in (text.lower(), text.upper()):
-        when, what = parse_reminder(now, text_fmt)
-        assert when == expected
-        assert what.strip() == ''
+        assert parse_reminder(now, text_fmt) == (expected, '')
 
