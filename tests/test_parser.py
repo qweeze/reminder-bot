@@ -2,7 +2,7 @@ import datetime as dt
 
 import pytest
 
-from bot import parse_reminder
+from reminder.parser import parse_reminder
 
 
 @pytest.mark.parametrize(

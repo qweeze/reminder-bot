@@ -8,5 +8,5 @@ RUN apk upgrade --update \
  && apk del tzdata \
  && rm -rf /var/cache/apk/*
 
-ADD bot.py .
-ENTRYPOINT ["python", "bot.py"]
+ADD reminder reminder
+ENTRYPOINT ["python", "-m", "reminder"]
