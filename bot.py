@@ -189,6 +189,8 @@ def handle_message(message: Message, db: DB) -> str:
         return 'Could not parse date'
     if not what:
         return 'Empy reminder'
+    if when < now:
+        return 'Date is in the past'
 
     db.save_reminder(message.chat_id, when, what)
 
