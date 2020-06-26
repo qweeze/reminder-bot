@@ -30,8 +30,7 @@ class DB:
             )
 
     @contextlib.contextmanager
-    def process_ready_to_send(self) -> Iterator[List[Tuple[int, str]]]:
-        now = dt.datetime.now()
+    def process_ready_to_send(self, now: dt.datetime) -> Iterator[List[Tuple[int, str]]]:
         with sqlite3.connect(self.filename) as conn:
             cur = conn.cursor()
             cur.execute(
