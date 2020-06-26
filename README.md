@@ -3,6 +3,7 @@
 ```bash
 $ docker build -t local/reminder --build-arg TZ=Asia/Yekaterinburg .
 $ export BOT_TOKEN=<bot_token>
+$ touch db.sqlite
 $ docker run \
     -d \
     --name reminder \
