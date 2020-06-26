@@ -9,6 +9,6 @@ $ docker run \
     --name reminder \
     -v ${PWD}/db.sqlite:/db.sqlite \
     local/reminder \
-    --token $TOKEN \
+    --token $BOT_TOKEN \
     --usernames <username_1> ... <username_n>
 ```
