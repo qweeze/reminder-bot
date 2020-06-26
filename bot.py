@@ -158,7 +158,7 @@ def handle_command(message: Message, db: DB) -> str:
     if command == 'list':
         rows = db.list_future(chat_id=message.chat_id)
         return '\n'.join(
-            f'[{record_id}] {dt.datetime.strftime(when, "%A, %d %b at %H:%S")}: {reminder}'
+            f'[{record_id}] {dt.datetime.strftime(when, "%A, %d %b at %H:%M")}: {reminder}'
             for record_id, when, reminder in rows
         ) if rows else 'Not found'
 
