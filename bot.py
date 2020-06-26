@@ -192,7 +192,7 @@ def handle_message(message: Message, db: DB) -> str:
 
     db.save_reminder(message.chat_id, when, what)
 
-    return 'Reminder set on ' + dt.datetime.strftime(when, '%A, %d %b at %H:%S')
+    return 'Reminder set on ' + dt.datetime.strftime(when, '%A, %d %b at %H:%M')
 
 
 class Sender:
