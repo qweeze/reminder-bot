@@ -28,6 +28,7 @@ class DB:
                 'insert into records (chat_id, datetime, reminder) values (?, ?, ?)',
                 (chat_id, when.isoformat(), what)
             )
+            conn.commit()
 
     @contextlib.contextmanager
     def process_ready_to_send(self, now: dt.datetime) -> Iterator[List[Tuple[int, str]]]:
@@ -44,6 +45,7 @@ class DB:
                     'update records set sent = 1 where datetime < ? and sent = 0',
                     (now.isoformat(),),
                 )
+                conn.commit()
 
     def list_unsent(self, chat_id: int) -> List[Tuple[int, dt.datetime, str]]:
         with sqlite3.connect(self.filename) as conn:
@@ -61,4 +63,5 @@ class DB:
         with sqlite3.connect(self.filename) as conn:
             cur = conn.cursor()
             cur.execute('delete from records where id = ?', (record_id,))
+            conn.commit()
             return bool(cur.rowcount == 1)
