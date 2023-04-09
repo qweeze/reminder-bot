@@ -9,4 +9,4 @@ RUN apk upgrade --update \
  && rm -rf /var/cache/apk/*
 
 ADD reminder reminder
-ENTRYPOINT ["python", "-m", "reminder"]
+ENTRYPOINT ["python", "main.py"]

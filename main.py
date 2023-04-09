@@ -7,10 +7,10 @@ import threading
 import time
 from functools import partial
 
-from .bot import Bot
-from .db import DB
-from .handlers import handle_message
-from .sender import Sender
+from reminder.bot import Bot
+from reminder.db import DB
+from reminder.handlers import handle_message
+from reminder.sender import Sender
 
 if __name__ == '__main__':
     arg_parser = argparse.ArgumentParser('Reminder bot')
